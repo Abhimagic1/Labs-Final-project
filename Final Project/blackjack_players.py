@@ -59,18 +59,6 @@ class SmartPlayer(Player):
             return False
 
 
-class PyschicPlayer(Player):
-
-    def should_hit(self):
-        dealer_score = self.game.dealer.curr_hand.score()
-        my_score = self.curr_hand.score()
-        next_card = self.game.shoe.peek()
-        if (dealer_score > my_score) and (my_score + next_card <= 21):
-            return True
-        else:
-            return False
-
-
 class LivePlayer(Player):
 
     def should_hit(self):
